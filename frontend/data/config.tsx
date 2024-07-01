@@ -18,14 +18,17 @@ const siteConfig = {
       {
         id: 'home',
         label: 'Home',
+        href: '',
       },
       {
         id: 'upload_',
         label: 'Upload',
+        href: '',
       },
       {
         id: 'highlights',
         label: 'Highlights',
+        href: '',
       },
     ],
   },

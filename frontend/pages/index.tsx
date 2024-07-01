@@ -67,7 +67,7 @@ const Home: NextPage = () => {
   return (
     <Box>
       <SEO
-        title="Predicción de Enfermedades a partir de Radiografías de Tórax"
+        title="Chest X-ray Disease Prediction"
         description="Sube una imagen de radiografía de tórax para obtener predicciones de enfermedades"
       />
       <Box>
