@@ -1,0 +1,9 @@
+**/.ipynb_checkpoints
+**.h5
+**.csv
+**.png
+**.jpg
+**.hdf5
+**save_model.py
+frontend/node_modules
+frontend/.next
