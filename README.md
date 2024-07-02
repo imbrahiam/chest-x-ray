@@ -1,21 +1,19 @@
-# Predicción de Enfermedades a partir de Radiografías de Tórax
+# 🩺 Predicción de Enfermedades a partir de Radiografías de Tórax
 
 Este proyecto es una solución basada en inteligencia artificial (IA) para predecir enfermedades a partir de imágenes de radiografías de tórax. Utiliza un modelo de aprendizaje profundo para analizar las imágenes y proporcionar predicciones de varias enfermedades.
-![alt text](/frontend/public/static/img/image.png)
-![alt text](/frontend/public/static/img/image2.png)
-![alt text](/frontend/public/static/img/image3.png)
-## Descripción del Proyecto
+
+## 📝 Descripción del Proyecto
 
 El proyecto incluye un modelo de IA entrenado para reconocer diferentes enfermedades pulmonares a partir de radiografías de tórax. La aplicación web permite a los usuarios subir una imagen y obtener predicciones sobre la presencia de enfermedades específicas.
 
-### Características Principales
+### 🌟 Características Principales
 
-- **Preciso:** Predicciones precisas para varias enfermedades pulmonares.
-- **Rápido:** Resultados en segundos.
-- **Confiable:** Basado en un modelo de IA robusto entrenado con un vasto conjunto de datos.
-- **Fácil de Usar:** Interfaz simple para subir imágenes y obtener resultados.
+- **Preciso:** 🔬 Predicciones precisas para varias enfermedades pulmonares.
+- **Rápido:** ⚡ Resultados en segundos.
+- **Confiable:** 🛡️ Basado en un modelo de IA robusto entrenado con un vasto conjunto de datos.
+- **Fácil de Usar:** 🖱️ Interfaz simple para subir imágenes y obtener resultados.
 
-## Instalación
+## 🛠️ Instalación
 
 Para configurar el proyecto localmente, sigue estos pasos:
 
@@ -39,9 +37,9 @@ Para configurar el proyecto localmente, sigue estos pasos:
     npm install
     ```
 
-## Uso
+## 🚀 Uso
 
-### Servidor Backend
+### 🌐 Servidor Backend
 
 1. Inicia el servidor Flask:
 
@@ -49,7 +47,7 @@ Para configurar el proyecto localmente, sigue estos pasos:
     python app.py
     ```
 
-### Cliente Frontend
+### 🖥️ Cliente Frontend
 
 1. Inicia el servidor Next.js:
 
@@ -60,7 +58,7 @@ Para configurar el proyecto localmente, sigue estos pasos:
 
 2. Abre tu navegador y navega a `http://localhost:3000` para acceder a la aplicación.
 
-## Entrenamiento del Modelo
+## 📊 Entrenamiento del Modelo
 
 El modelo de IA fue entrenado utilizando un conjunto de datos de radiografías de tórax. Aquí hay un resumen del proceso:
 
@@ -79,7 +77,7 @@ Para entrenar el modelo desde cero, puedes seguir estos pasos:
 
 3. Guarda el modelo entrenado para su uso en la predicción.
 
-## Predicción
+## 🔍 Predicción
 
 La predicción se realiza a través de una API RESTful. Sube una imagen de radiografía de tórax y obtén predicciones sobre la presencia de enfermedades. Aquí hay un ejemplo de cómo hacer una predicción usando `curl`:
 
@@ -87,7 +85,7 @@ La predicción se realiza a través de una API RESTful. Sube una imagen de radio
 curl -X POST -F 'file=@path/to/your/image.jpg' http://localhost:5000/predict
 ```
 
-## Contribuciones
+## 🤝 Contribuciones
 
 Las contribuciones son bienvenidas. Para contribuir, sigue estos pasos:
 
@@ -97,11 +95,11 @@ Las contribuciones son bienvenidas. Para contribuir, sigue estos pasos:
 4. Sube tus cambios (`git push origin feature/nueva-caracteristica`).
 5. Abre un Pull Request.
 
-## Licencia
+## 📜 Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
-## Créditos
+## 👥 Créditos
   - [Brahiam](https://www.linkedin.com) 🧑‍💻
   - [Gilthong](https://www.linkedin.com) 🧑‍💻
   - [Domingo Alcántara](https://www.linkedin.com) 🧑‍💻
@@ -109,6 +107,5 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
   - [Gary Campusano](https://www.linkedin.com/in/gary-alexander-campusano-paredes-87a28724a/) 🧑‍💻
 
   Este proyecto fue desarrollado como parte del Samsung Innovation Campus. Agradecemos a todos los colaboradores y mentores por su apoyo y orientación.
-
 
 **Nota:** Este es un proyecto de demostración y no debe utilizarse para diagnóstico médico en un entorno real.
