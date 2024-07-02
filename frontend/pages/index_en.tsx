@@ -67,8 +67,8 @@ const Home: NextPage = () => {
   return (
     <Box>
       <SEO
-        title="Predicción de Enfermedades a partir de Radiografías de Tórax"
-        description="Sube una imagen de radiografía de tórax para obtener predicciones de enfermedades"
+        title="Chest X-ray Disease Prediction"
+        description="Upload a chest X-ray image to get disease predictions"
       />
       <Box>
         <HeroSection />
@@ -92,14 +92,14 @@ const HeroSection: React.FC = () => {
             px="0"
             title={
               <FallInPlace>
-                Radiografía de Tórax
-                <Br /> Predicción de Enfermedades
+                Chest X-ray
+                <Br /> Disease Prediction
               </FallInPlace>
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                Sube una imagen de radiografía de tórax y obtén predicciones de
-                enfermedades usando nuestro modelo de IA.
+                Upload a chest X-ray image and get disease predictions using our
+                AI model.
               </FallInPlace>
             }
           >
@@ -143,33 +143,31 @@ const HeroSection: React.FC = () => {
         pt="20"
         features={[
           {
-            title: "Preciso",
+            title: "Accurate",
             icon: FiSmile,
-            description:
-              "Obtén predicciones precisas para varias enfermedades de tórax.",
+            description: "Get precise predictions for various chest diseases.",
             iconPosition: "left",
             delay: 0.6,
           },
           {
-            title: "Rápido",
+            title: "Fast",
             icon: FiSliders,
-            description: "Recibe predicciones en segundos.",
+            description: "Receive predictions within seconds.",
             iconPosition: "left",
             delay: 0.8,
           },
           {
-            title: "Confiable",
+            title: "Reliable",
             icon: FiGrid,
             description:
-              "Construido sobre un robusto modelo de IA entrenado con un vasto conjunto de datos.",
+              "Built on a robust AI model trained on a vast dataset.",
             iconPosition: "left",
             delay: 1,
           },
           {
-            title: "Fácil de Usar",
+            title: "Easy to Use",
             icon: FiThumbsUp,
-            description:
-              "Interfaz simple para subir imágenes y obtener resultados.",
+            description: "Simple interface to upload images and get results.",
             iconPosition: "left",
             delay: 1.1,
           },
@@ -198,35 +196,6 @@ const all_labels = [
   "No Finding",
 ];
 
-const spanishLabels = {
-  Cardiomegaly: "Cardiomegalia",
-  Emphysema: "Enfisema",
-  Effusion: "Derrame",
-  Hernia: "Hernia",
-  Infiltration: "Infiltración",
-  Mass: "Masa",
-  Nodule: "Nódulo",
-  Atelectasis: "Atelectasia",
-  Pneumothorax: "Neumotórax",
-  Pleural_Thickening: "Engrosamiento Pleural",
-  Pneumonia: "Neumonía",
-  Fibrosis: "Fibrosis",
-  Edema: "Edema",
-  Consolidation: "Consolidación",
-  "No Finding": "Sin Hallazgos",
-};
-
-const formatDiseaseName = (disease: string) => {
-  return disease.replace(/_/g, " ");
-};
-
-const translateDiseaseName = (disease: string, language: string) => {
-  if (language === "es") {
-    return spanishLabels[disease] || formatDiseaseName(disease);
-  }
-  return formatDiseaseName(disease);
-};
-
 const UploadSection: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<any | null>(null);
   const [predictions, setPredictions] = useState<any | null>(null);
@@ -246,7 +215,7 @@ const UploadSection: React.FC = () => {
       formData.append("file", file);
 
       try {
-        const response = await fetch("http://localhost:5000/predict", {
+        const response = await fetch("https://appalling-shaun-chestxray-5013179c.koyeb.app/predict", {
           method: "POST",
           body: formData,
         });
@@ -275,8 +244,6 @@ const UploadSection: React.FC = () => {
         .map(([disease, value]) => ({ disease, value }))
         .sort((a: any, b: any) => parseFloat(b.value) - parseFloat(a.value))
     : [];
-
-  const language = "es"; // Set your language preference here
 
   return (
     <Container maxW="container.md" py="12" id="upload">
@@ -331,14 +298,14 @@ const UploadSection: React.FC = () => {
           <Table variant="simple" mt={4} mx="auto">
             <Thead>
               <Tr>
-                <Th>Enfermedad</Th>
-                <Th>Predicción</Th>
+                <Th>Disease</Th>
+                <Th>Prediction</Th>
               </Tr>
             </Thead>
             <Tbody>
               {sortedPredictions.map((prediction: any, index) => (
                 <Tr key={index}>
-                  <Td>{translateDiseaseName(prediction.disease, language)}</Td>
+                  <Td>{prediction.disease != "Pleural_Thickening" ? prediction.disease : "Pleural Thickening"}</Td>
                   <Td>{prediction.value}</Td>
                 </Tr>
               ))}
@@ -360,12 +327,11 @@ const HighlightsSection = () => {
       <HighlightsItem colSpan={[1, null, 2]} title="Innovative AI Solution">
         <VStack alignItems="flex-start" spacing="8">
           <Text color="muted" fontSize="xl">
-            Nuestro proyecto final para el Samsung Innovation Campus es una
-            solución de IA de vanguardia que{" "}
-            <Em>analiza imágenes de radiografías de tórax</Em> para predecir la
-            presencia de varias enfermedades. Este proyecto muestra nuestra
-            capacidad para integrar el aprendizaje automático con tecnologías
-            modernas de desarrollo web.
+            Our final project for the Samsung Innovation Campus is a
+            cutting-edge AI solution that <Em>analyzes chest X-ray images</Em>{" "}
+            to predict the presence of various diseases. This project showcases
+            our ability to integrate machine learning with modern web
+            development technologies.
           </Text>
 
           <Flex
@@ -381,15 +347,15 @@ const HighlightsSection = () => {
           >
             <Box>
               <Text color="yellow.400" display="inline">
-                "¡Cree en el poder de la IA
+                "Believe in the power of AI
               </Text>{" "}
               <Text color="cyan.300" display="inline">
-                para transformar la atención médica!"
+                to transform healthcare!"
               </Text>
             </Box>
             <IconButton
               icon={hasCopied ? <FiCheck /> : <FiCopy />}
-              aria-label="Copiar frase motivacional"
+              aria-label="Copy motivational phrase"
               onClick={onCopy}
               variant="ghost"
               ms="4"
@@ -399,12 +365,11 @@ const HighlightsSection = () => {
           </Flex>
         </VStack>
       </HighlightsItem>
-      <HighlightsItem title="Sólidas Bases en la Atención Médica">
+      <HighlightsItem title="Solid Foundations in Healthcare">
         <Text color="muted" fontSize="lg">
-          Nuestro proyecto está construido sobre sólidas bases de imágenes
-          médicas y aprendizaje automático. Utilizamos herramientas y
-          bibliotecas establecidas para asegurar que nuestra solución sea
-          confiable y efectiva en un entorno de atención médica.
+          Our project is built on solid foundations of medical imaging and
+          machine learning. We use established tools and libraries to ensure our
+          solution is reliable and effective in a healthcare setting.
         </Text>
       </HighlightsItem>
       <HighlightsTestimonialItem
@@ -413,23 +378,22 @@ const HighlightsSection = () => {
         avatar="/static/images/avatar.jpg"
         gradient={["pink.200", "purple.500"]}
       >
-        “Este proyecto ha demostrado el potencial de la IA en el diagnóstico
-        médico. Ha sido una experiencia valiosa, permitiéndonos contribuir a los
-        avances en tecnología de atención médica.”
+        “This project has demonstrated the potential of AI in medical
+        diagnostics. It has been a valuable experience, allowing us to
+        contribute to healthcare technology advancements.”
       </HighlightsTestimonialItem>
-      <HighlightsItem colSpan={[1, null, 2]} title="Características Completas">
+      <HighlightsItem colSpan={[1, null, 2]} title="Comprehensive Features">
         <Text color="muted" fontSize="lg">
-          Nuestra solución abarca una amplia gama de características para
-          proporcionar una herramienta completa y eficiente para los
-          profesionales médicos.
+          Our solution encompasses a wide range of features to provide a
+          complete and efficient tool for medical professionals.
         </Text>
         <Wrap mt="8">
           {[
-            "predicción de enfermedades",
-            "interfaz fácil de usar",
-            "manejo seguro de datos",
-            "procesamiento en tiempo real",
-            "integración de IA",
+            "disease prediction",
+            "user-friendly interface",
+            "secure data handling",
+            "real-time processing",
+            "AI integration",
           ].map((value) => (
             <Tag
               key={value}
