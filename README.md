@@ -19,23 +19,23 @@ Para configurar el proyecto localmente, sigue estos pasos:
 
 1. Clona el repositorio:
 
-    ```sh
-    git clone https://github.com/imbrahiam/chest-x-ray.git
-    cd chest-x-ray
-    ```
+   ```sh
+   git clone https://github.com/imbrahiam/chest-x-ray.git
+   cd chest-x-ray
+   ```
 
 2. Instala las dependencias de Python:
 
-    ```sh
-    pip install -r requirements.txt
-    ```
+   ```sh
+   pip install -r requirements.txt
+   ```
 
 3. Instala las dependencias de Node.js:
 
-    ```sh
-    cd client
-    npm install
-    ```
+   ```sh
+   cd client
+   npm install
+   ```
 
 ## 🚀 Uso
 
@@ -43,18 +43,18 @@ Para configurar el proyecto localmente, sigue estos pasos:
 
 1. Inicia el servidor Flask:
 
-    ```sh
-    python app.py
-    ```
+   ```sh
+   python app.py
+   ```
 
 ### 🖥️ Cliente Frontend
 
 1. Inicia el servidor Next.js:
 
-    ```sh
-    cd client
-    npm run dev
-    ```
+   ```sh
+   cd client
+   npm run dev
+   ```
 
 2. Abre tu navegador y navega a `http://localhost:3000` para acceder a la aplicación.
 
@@ -71,9 +71,9 @@ Para entrenar el modelo desde cero, puedes seguir estos pasos:
 1. Preprocesa los datos y divídelos en conjuntos de entrenamiento, validación y prueba.
 2. Define y entrena el modelo utilizando `train.py`:
 
-    ```sh
-    python train.py
-    ```
+   ```sh
+   python train.py
+   ```
 
 3. Guarda el modelo entrenado para su uso en la predicción.
 
@@ -100,12 +100,13 @@ Las contribuciones son bienvenidas. Para contribuir, sigue estos pasos:
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
 ## 👥 Créditos
-  - [Brahiam](https://www.linkedin.com) 🧑‍💻
-  - [Gilthong](https://www.linkedin.com) 🧑‍💻
-  - [Domingo Alcántara](https://www.linkedin.com) 🧑‍💻
-  - [Isaac](https://www.linkedin.com) 🧑‍💻
-  - [Gary Campusano](https://www.linkedin.com/in/gary-alexander-campusano-paredes-87a28724a/) 🧑‍💻
 
-  Este proyecto fue desarrollado como parte del Samsung Innovation Campus. Agradecemos a todos los colaboradores y mentores por su apoyo y orientación.
+- [Brahiam](https://www.linkedin.com) 🧑‍💻
+- [Gilthong Enmanuel Palin Garcia](https://www.linkedin.com) 🧑‍💻
+- [Domingo Gabriel Alcántara Martinez](https://linkedin.com/in/domingo-alcantara-452214265/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) 🧑‍💻
+- [Isaac](https://www.linkedin.com) 🧑‍💻
+- [Gary Alexander Campusano Paredes](https://www.linkedin.com/in/gary-alexander-campusano-paredes-87a28724a/) 🧑‍💻
+
+Este proyecto fue desarrollado como parte del Samsung Innovation Campus. Agradecemos a todos los colaboradores y mentores por su apoyo y orientación.
 
 **Nota:** Este es un proyecto de demostración y no debe utilizarse para diagnóstico médico en un entorno real.
